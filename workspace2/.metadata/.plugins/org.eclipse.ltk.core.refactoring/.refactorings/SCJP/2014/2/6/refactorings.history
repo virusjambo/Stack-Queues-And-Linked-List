@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Extract local variable &apos;j2&apos; from expression &apos;i=++i&apos;&#x0D;&#x0A;- Original project: &apos;SCJP&apos;&#x0D;&#x0A;- Variable name: &apos;j2&apos;&#x0D;&#x0A;- Destination method: &apos;foo.main()&apos;&#x0D;&#x0A;- Variable expression: &apos;i=++i&apos;" description="Extract local variable &apos;j2&apos;" final="false" id="org.eclipse.jdt.ui.extract.temp" input="/src&lt;{foo.java" name="j2" replace="false" selection="225 5" stamp="1391448174409" version="1.0"/>
+</session>

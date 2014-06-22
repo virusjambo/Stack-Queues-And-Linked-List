@@ -1,0 +1,11 @@
+
+public class foo extends Hobbit {
+	static Hobbit bc=new Hobbit();
+	 public static void main(String[] args) { 
+	     Short myGold = 7; 
+	     System.out.println(bc.countGold(myGold, 6)); 
+	   } 
+}
+
+
+

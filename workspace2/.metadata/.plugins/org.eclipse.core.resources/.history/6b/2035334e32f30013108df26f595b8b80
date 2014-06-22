@@ -1,0 +1,47 @@
+package TernerySeachTree;
+
+public class TerneryTree<E,T extends Character> {
+
+	public class Node<T>{
+		Node<T> low;
+		Node<T> high;
+		Node<T> equal;
+		char value;
+		boolean isEnd;
+		
+		Node (){
+			
+		}
+		Node(char value){
+			this.low=null;
+			this.high=null;
+			this.equal=null;
+			this.value=value;
+			this.isEnd=false;
+		}
+		
+		
+	}
+	
+	 Node<T> insert(Node<T> root,int index,T [] arr){
+		 if(root==null){
+			 root=new Node<T>(arr[index]);
+			 
+			 if(root.value>arr[index])
+				 root.low=insert(root,index,arr);
+			 if(root.value<arr[index])
+				 root.high=insert(root,index,arr);
+			 if(root.value==arr[index]){
+				 
+				 
+			 }
+				 
+				 
+					 
+		 }
+		
+		
+	}
+	
+	
+}

@@ -1,0 +1,19 @@
+
+public class App {
+	public static void main(String[] args) {
+		int i=0,j;
+		char[] str=new char[20];
+		System.out.println("Enter the string:\n");
+		while(str[i]=getchar()!='\n')
+		{
+			for( j=0;j<i;j++)
+			{
+			if(str[i]==str[j])
+			    	i--;
+			
+			i++;
+		}
+	}
+
+}
+}

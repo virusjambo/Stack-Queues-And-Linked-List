@@ -1,0 +1,6 @@
+package findAllPossibleInterpretationsOfAnArrayOfDigits;
+
+public class Tree<E> {
+	
+
+}

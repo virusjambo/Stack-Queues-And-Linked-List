@@ -1,0 +1,71 @@
+package findAllPossibleInterpretationsOfAnArrayOfDigits;
+
+import java.util.Arrays;
+
+import createtreeusingagivearray.Node;
+
+public class Tree<E> {
+	private static final String[] alphabet = {"", "a", "b", "c", "d", "e",
+        "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r",
+        "s", "t", "u", "v", "w", "x", "v", "z"};
+	Node<E>createTree(int data,int arr[],String dataString){
+		if(data>26)
+			return null;
+		String nodeData=dataString+alphabet[data];
+		Node<E> newNode=new Node<E>((E) nodeData);
+		if(arr.length>0){
+			int index=arr[0];
+			int newArr[] = Arrays.copyOfRange(arr, 1, arr.length);
+			newNode.setLeftRef(createTree(index,newArr,nodeData));
+			if(arr.length>1){
+			index=arr[0]*10+arr[1];
+			newArr=Arrays.copyOfRange(arr, 2, arr.length);
+			newNode.setRightRef(createTree(index,newArr,nodeData));
+			}
+			
+		}
+		return newNode;
+	}
+	
+	
+    public  void printleaf(Node<E> root) {
+        if (root == null) 
+            return;
+ 
+        if (root.getLeftRef() == null && root.getRightRef() == null) 
+            System.out.print(root.getValue() + "  ");
+         
+        printleaf(root.getLeftRef());
+        printleaf(root.getRightRef());
+    }
+ 
+ 
+     void printAllInterpretations(int[] arr) {
+ 
+       
+        Node<E> root = createTree(0, arr, "");
+ 
+        printleaf(root);
+ 
+        System.out.println();  
+    }
+ 
+    // For simplicity I am taking it as string array. Char Array will save space
+    private static final String[] alphabet = {"", "a", "b", "c", "d", "e",
+        "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r",
+        "s", "t", "u", "v", "w", "x", "v", "z"};
+ 
+    // Driver method to test above methods 
+    public static void main(String args[]) {
+ 
+   Tree<String> tr=new Tree<>();
+    	
+        int[] arr = {1, 1, 3, 4};
+        tr.printAllInterpretations(arr);
+ 
+       
+     
+    }
+}
+
+}

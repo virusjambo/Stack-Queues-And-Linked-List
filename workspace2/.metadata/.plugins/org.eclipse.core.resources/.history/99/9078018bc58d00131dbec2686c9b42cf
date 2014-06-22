@@ -1,0 +1,7 @@
+
+public class A {
+	public void method(){
+	System.out.println("ur in class a");	
+	}
+
+}

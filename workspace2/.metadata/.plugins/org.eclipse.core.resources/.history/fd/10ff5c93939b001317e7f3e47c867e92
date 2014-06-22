@@ -1,0 +1,81 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class PrimeNumbers {
+
+	public static boolean isPrime(int n){
+		if (n<2)
+			return false;
+		
+		if(n>3){
+			if(n%2==0 || n%3==0){
+				return false;
+			}
+			for(int i=5;i<n/2+1;i+=6){
+				if(n%i==0 || n%(i+2)==0)
+					return false;
+			}
+		}
+		return true;
+	}
+	
+	public static boolean isPrime(int n, ArrayList<Integer> al){
+		for(int i:al){
+			if(n==i)
+				return true;
+			if(n%i==0)
+				return false;
+		}
+		al.add(n);
+		return true;
+	}
+	
+	public static void main(String args[]){
+		ArrayList<Integer> al = new ArrayList<Integer>();
+		al.add(2);
+		al.add(3);
+		Scanner sc = new Scanner(System.in);
+		int t = sc.nextInt();
+		while(t-->0){
+			int m = sc.nextInt();
+			int n = sc.nextInt();
+			if(m<=2){
+				System.out.println(2);
+			}
+			if(m<=3){
+				System.out.println(3);
+			}
+			if(n<=5)
+				System.out.println(5);
+			if(n-m<7){
+				for(int i=5;i<=n;i+=6){
+					if(isPrime(i))
+					al.add(i);
+					if(isPrime(i+2))
+					al.add(i+2);
+				}
+			}else{
+				for(int i=5;i<=m-1;i+=6){
+					if(isPrime(i))
+					al.add(i);
+					if(isPrime(i+2))
+					al.add(i+2);
+				}
+			}
+			if(m%6==0 && isPrime(m,al)){
+				System.out.println(m);
+			}else if(m%6==1 && isPrime(m+1,al)){
+				System.out.println(m+1);
+			}
+			m=m+5-(m%6);
+			for(int i=m;i<n-1;i+=6){
+				if(isPrime(i,al)){
+					System.out.println(i);
+				}
+				if(isPrime(i+2,al)){
+					System.out.println(i+2);
+				}
+			}
+		}
+	}
+}

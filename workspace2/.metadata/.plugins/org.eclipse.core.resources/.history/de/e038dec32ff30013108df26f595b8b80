@@ -1,0 +1,23 @@
+package TernerySeachTree;
+
+public class TerneryTree<E> {
+
+	public class Node<T>{
+		Node<T> low;
+		Node<T> high;
+		Node<T> equal;
+		T value;
+		boolean isEnd;
+		
+		Node (){
+			
+		}
+		Node(T value){
+			
+		}
+		
+		
+	}
+	
+	
+}

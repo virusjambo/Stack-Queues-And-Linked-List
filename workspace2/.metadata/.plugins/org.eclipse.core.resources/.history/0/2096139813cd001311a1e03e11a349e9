@@ -1,0 +1,144 @@
+package mergesortonlinkedlist;
+
+
+
+public class LinkedList<E > implements Cloneable {
+	Node<E> head = null;
+	
+
+	// Adding at the End
+	class Node<T > {
+		T value;
+		Node<T> nextReference;
+
+		public Node(T value) {
+			this.value = value;
+			this.nextReference = null;
+		}
+
+		public Node(T value, Node<T> ref) {
+			this.value = value;
+			this.nextReference = ref;
+		}
+
+		public Node() {
+			// TODO Auto-generated constructor stub
+		}
+
+		public T getValue() {
+			return value;
+		}
+
+		public void setValue(T value) {
+			this.value = value;
+		}
+
+		public Node<T> getNextReference() {
+			return nextReference;
+		}
+
+		public void setNextReference(Node<T> nextReference) {
+			this.nextReference = nextReference;
+		}
+	}
+
+	public void add(E value) {
+		Node<E> nodeToBeAdded = head;
+		if (validate(head)) {
+			head = new Node<E>(value);
+			return;
+		}
+
+		while (nodeToBeAdded.getNextReference() != null) {
+			nodeToBeAdded = nodeToBeAdded.getNextReference();
+		}
+		Node<E> node = new Node<E>(value);
+		nodeToBeAdded.setNextReference(node);
+
+	}
+
+void mergeSort(Node<E> node){
+	Node<E> head=node;
+	Node<E> head1=null;
+	Node<E> head2=null;
+	Node<E> slow=null;
+	Node<E> fast=null;
+	if(head==null || head.getNextReference()==null){
+		head1=head;
+		head2=null;
+	}else{
+		slow=head;
+		fast=head.getNextReference();
+		while(fast!=null &&fast.getNextReference()!=null ){
+			slow=slow.nextReference;
+			fast=slow.nextReference;
+		}
+		head1=head;
+		head2=slow.nextReference;
+		head1.setNextReference(null);
+	}
+	middleOfLinkedList(head,head1,head2);
+	mergeSort();
+	mergeSort();
+	System.out.println();	
+		
+	
+}	
+void middleOfLinkedList(Node<E> head,Node<E> head1,Node<E> head2){
+	Node<E> slow=null;
+	Node<E> fast=null;
+	if(head==null || head.getNextReference()==null){
+		head1=head;
+		head2=null;
+	}else{
+		slow=head;
+		fast=head.getNextReference();
+		while(fast!=null &&fast.getNextReference()!=null ){
+			slow=slow.nextReference;
+			fast=slow.nextReference;
+		}
+		head1=head;
+		head2=slow.nextReference;
+		head1.setNextReference(null);
+	}
+	
+	
+	
+}
+	
+	void printAll(Node<E> head) {
+		Node<E> node =head ;
+		while (node != null) {
+			System.out.println(node.getValue());
+			node = node.getNextReference();
+		}
+
+	}
+
+	
+	public boolean validate(Node<E> head) {
+		if (head == null) {
+			return true;
+		}
+		return false;
+	}
+
+	
+	
+	public static void main(String[] args) {
+		LinkedList<String> linkedList = new LinkedList<String>();
+		
+		linkedList.add("1");
+		linkedList.add("2");
+		linkedList.add("3");
+		linkedList.add("4");
+		linkedList.add("5");
+		linkedList.add("8");
+		linkedList.add("7");
+		linkedList.mergeSort(linkedList.head);
+	
+		//linkedList.printAll(linkedList.reverseLinkedList(linkedList.head,3));
+
+	}
+
+}

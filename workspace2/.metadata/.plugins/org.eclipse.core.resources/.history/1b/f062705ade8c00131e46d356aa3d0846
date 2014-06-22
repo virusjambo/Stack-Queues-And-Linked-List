@@ -1,0 +1,8 @@
+
+public class Hobbit {
+	
+		   void countGold(int x, int y) {System.out.println(
+				   'a'); } 
+		 
+
+}

@@ -1,0 +1,18 @@
+package convertBinaryTreeInToDoubleLinkedList;
+
+import createtreeusingagivearray.Node;
+
+public class Tree <E>{
+
+	 Node<E> convertComplexMethod1(Node<E> root){
+		 if(root==null)
+			 return root;
+		 if(root.getLeftRef()!=null){
+			 Node<E> temp=convertComplexMethod1(root.getLeftRef());
+			 
+			 
+		 }
+		
+		
+	}
+}

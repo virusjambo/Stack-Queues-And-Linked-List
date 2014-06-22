@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move element &apos;Node.java&apos; to &apos;mylinkedlist/src/(default package)&apos;&#x0D;&#x0A;- Original project: &apos;linkedlists&apos;&#x0D;&#x0A;- Destination element: &apos;mylinkedlist/src/(default package)&apos;&#x0D;&#x0A;- Original element: &apos;Node.java&apos;&#x0D;&#x0A;- Update references to refactored element" description="Move compilation unit" destination="=mylinkedlist/src&lt;" element1="/src&lt;{Node.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.move" policy="org.eclipse.jdt.ui.moveResources" qualified="false" references="true" stamp="1397018332440" units="1" version="1.0"/>
+</session>

@@ -1,0 +1,38 @@
+package IterativePostOrderUsingStack;
+
+import java.util.Stack;
+
+
+
+import createtreeusingagivearray.BinaryTree;
+import createtreeusingagivearray.Node;
+
+public class Tree< E> {
+void 	TraverseTreeUsingTwoStack(Node<E> root){
+	Stack<Node<E>> stack1=new Stack<>();
+	Stack<Node<E>> stack2=new Stack<>();
+	stack2.push(root);
+	while(!stack1.isEmpty()||!stack2.isEmpty()){
+		while(!stack2.isEmpty()){
+			Node<E> temp=stack2.pop();
+			if(temp.getLeftRef()!=null)
+				stack2.push(temp.getLeftRef());
+			if(temp.getRightRef()!=null)
+				stack2.push(temp.getRightRef());
+			stack1.push(temp);
+		}
+		System.out.println(stack1.pop().getValue());
+	}
+	
+	
+	}
+
+public static void main(String[] args) {
+	BinaryTree<Integer> bt=new BinaryTree<>();
+	Integer[] arr={1,2,3,4,5,6,7,8,9};
+	bt.covertToTree(arr);
+	Tree<Integer> it=new Tree<>();
+	it.TraverseTreeUsingTwoStack(bt.getRoot());
+}
+
+}

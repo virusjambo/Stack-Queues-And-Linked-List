@@ -1,0 +1,5 @@
+INDEX VERSION 1.126+C:\Users\Virus\Documents\GitHub\DataStructure\workspace2\.metadata\.plugins\org.eclipse.jdt.core
+3692511841.index
+1452455192.index
+118620040.index
+3015671029.index

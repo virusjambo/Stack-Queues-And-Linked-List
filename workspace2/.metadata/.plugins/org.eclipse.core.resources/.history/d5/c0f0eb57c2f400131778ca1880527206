@@ -1,0 +1,8 @@
+package TrucketTreeIfPathDoesNotMatchSum;
+
+public class Tree<E extends Number> {
+	
+	
+	
+
+}

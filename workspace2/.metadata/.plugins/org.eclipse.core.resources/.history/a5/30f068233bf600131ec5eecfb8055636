@@ -1,0 +1,22 @@
+package LeastCommanAniOfGivenelements;
+
+import createtreeusingagivearray.Node;
+
+public class Tree<E>{
+	
+Node<E>	findLCA(Node<E> root,E key,E key1){
+	if(root==null){
+		return null;
+	}	
+	if(root.getValue().equals(key)|| root.getValue().equals(key1))
+		return root;
+	Node<E> ls=findLCA(root.getLeftRef(), key, key1);
+	Node<E> rs=findLCA(root.getRightRef(), key, key1);
+	if(ls!=null && rs!=null)
+		return root;
+	return ls!=null?ls:rs;
+	
+	
+	}
+
+}

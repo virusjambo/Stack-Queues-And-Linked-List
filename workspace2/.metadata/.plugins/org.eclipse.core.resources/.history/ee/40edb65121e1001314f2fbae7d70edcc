@@ -1,0 +1,23 @@
+
+public class triangle {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		int rowCount=1;
+		for(int i=5;i>0;i--){
+			 int f=i-1;
+			for(int k=0;k<rowCount;k++){
+				
+				System.out.printf("%" +(f)+"d ",rowCount);
+				++f;++f;
+				
+			}
+			rowCount++;
+			System.out.println();
+		}
+
+	}
+
+}
