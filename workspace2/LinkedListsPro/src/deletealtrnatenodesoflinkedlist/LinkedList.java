@@ -9,7 +9,8 @@ package deletealtrnatenodesoflinkedlist;
 public class LinkedList<E > implements Cloneable {
 	Node<E> head = null;
 	
-
+//IF given linked list is 1 2 3 4 5 6 then result 
+// 1 3 5
 	// Adding at the End
 	class Node<T > {
 		T value;
